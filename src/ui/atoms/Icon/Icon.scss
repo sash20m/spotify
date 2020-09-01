@@ -1,0 +1,13 @@
+@import '../../../styles/helpers';
+
+.zh-icon {
+  &.zh-icon-size {
+    &-small {
+      font-size: rem(14px);
+    }
+
+    &-big {
+      font-size: rem(45px);
+    }
+  }
+}

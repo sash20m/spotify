@@ -1,0 +1,204 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+// regular palette
+$regularPulse: #e9e8e5;
+$regularBorder: #e9e8e5;
+$regularBackground: #ffffff;
+$regularText: #000403;
+$regularHoverBorder: #e9e8e5;
+$regularHoverBackground: #f4f3f2;
+$regularHoverText: #739898;
+
+$primaryPulse: #469c9b;
+$primaryBorder: #469c9b;
+$primaryBackground: #469c9b;
+$primaryText: #ffffff;
+$primaryHoverBorder: #739898;
+$primaryHoverBackground: #739898;
+$primaryHoverText: #ffffff;
+
+$invertPulse: #104d43;
+$invertBorder: #104d43;
+$invertBackground: #104d43;
+$invertText: #ffffff;
+$invertHoverBorder: #47675c;
+$invertHoverBackground: #47675c;
+$invertHoverText: #ffffff;
+
+// pulses
+@include pulse('regularPulse', $regularPulse);
+@include pulse('primaryPulse', $primaryPulse);
+@include pulse('invertPulse', $invertPulse);
+
+// fade
+@include fadeBackground('regularFade', $regularBackground);
+@include fadeBackground('primaryFade', $primaryBackground);
+@include fadeBackground('invertFade', $invertBackground);
+
+.zh-button-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0px 3px 4px 0px rgba(111, 116, 126, 0.12);
+  transition: 0.3s ease;
+
+  &.has-prefix {
+    .zh-button {
+      padding-left: rem(30px);
+    }
+  }
+
+  &.zh-button-type {
+    &-regular {
+      border: 1px solid $regularBorder;
+      background: $regularBackground;
+
+      .zh-button {
+        color: $regularText;
+      }
+
+      .zh-button-prefix svg path {
+        fill: $regularText;
+      }
+
+      &:hover {
+        color: $regularHoverText;
+        border-color: $regularHoverBorder;
+        background: $regularHoverBackground;
+      }
+
+      .zh-button-pulse {
+        animation: regularPulse 1s forwards;
+      }
+    }
+
+    &-primary {
+      border: 1px solid $primaryBorder;
+      background: $primaryBackground;
+
+      .zh-button {
+        color: $primaryText;
+      }
+
+      .zh-button-prefix svg path {
+        fill: $primaryText;
+      }
+
+      &:hover {
+        color: $primaryHoverText;
+        border-color: $primaryHoverBorder;
+        background: $primaryHoverBackground;
+      }
+
+      .zh-button-pulse {
+        animation: primaryPulse 1s forwards;
+      }
+    }
+
+    &-invert {
+      border: 1px solid $invertBorder;
+      background: $invertBackground;
+
+      .zh-button {
+        color: $invertText;
+      }
+
+      .zh-button-prefix svg path {
+        fill: $invertText;
+      }
+
+      &:hover {
+        color: $invertHoverText;
+        border-color: $invertHoverBorder;
+        background: $invertHoverBackground;
+      }
+
+      .zh-button-pulse {
+        animation: invertPulse 1s forwards;
+      }
+    }
+  }
+
+  .zh-button-loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    pointer-events: none;
+
+    &.zh-button-loading {
+      &-regular {
+        animation: regularFade 0.25s forwards;
+      }
+
+      &-primary {
+        animation: primaryFade 0.25s forwards;
+      }
+
+      &-invert {
+        animation: invertFade 0.25s forwards;
+      }
+    }
+
+    .zh-loader-spinner {
+      position: absolute;
+      left: calc(50% - 7.5px);
+      top: calc(50% - 7.5px);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .zh-button-pulse {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    border-radius: 2px;
+  }
+
+  .zh-button-prefix {
+    position: absolute;
+    left: rem(10px);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .zh-button {
+    font-size: rem(13px);
+    border-color: transparent;
+    background: transparent;
+    padding: rem(8px 10px);
+    cursor: pointer;
+    outline: none !important;
+    @include fontMedium;
+  }
+}
+
+.zh-button-group {
+  display: flex;
+
+  > .zh-button-wrapper {
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}

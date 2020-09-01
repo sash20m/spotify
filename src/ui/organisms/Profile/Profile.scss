@@ -1,0 +1,47 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.zh-profile {
+  width: rem(300px);
+  padding: 0 !important;
+
+  .zh-profile-title {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e9e8e5;
+    padding: rem(15px);
+    @include fontSemiBold;
+    font-size: rem(13px);
+    color: #3c3939;
+  }
+
+  .zh-profile-items {
+    .zh-profile-item {
+      cursor: pointer;
+      position: relative;
+      padding: rem(15px);
+      padding-left: rem(55px);
+      @include fontSemiBold;
+      font-size: rem(13px);
+      color: #00362d;
+      background-color: #fff;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: #f4f3f2;
+        color: #739898;
+      }
+
+      .zh-icon {
+        font-size: rem(18px);
+        position: absolute;
+        left: rem(27.5px);
+        top: rem(15px);
+
+        path {
+          fill: #00362d;
+        }
+      }
+    }
+  }
+}

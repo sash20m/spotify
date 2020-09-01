@@ -1,0 +1,17 @@
+@import '../../../styles/helpers';
+
+.zh-send-message-content {
+  padding: 0 !important;
+
+  .zh-send-message-content-item {
+    padding: rem(15px 50px);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e9e8e5;
+    }
+  }
+}
+
+.zh-send-message-button {
+  white-space: nowrap;
+}

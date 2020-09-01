@@ -1,0 +1,55 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+
+.nav {
+  width: 100%;
+  height: rem(110px);
+  padding: 0 rem(30px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4f3f2;
+  border-bottom: 1px solid $inputBorder;
+}
+
+.logo {
+  width: rem(150px);
+  height: rem(60px);
+  background: url(/logo.png) no-repeat center;
+}
+
+.group {
+  display: flex;
+
+  & a:first-child {
+    margin-right: rem(15px);
+  }
+}
+
+.switchLang {
+  position: absolute;
+  left: rem(180px);
+  .select {
+    border: none !important;
+  }
+  & .rc-select {
+    background: transparent;
+    border: none;
+    width: rem(80px);
+    margin: 0;
+
+    & input {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .group {
+    flex-direction: column;
+
+    & > a {
+      width: 100%;
+    }
+  }
+}

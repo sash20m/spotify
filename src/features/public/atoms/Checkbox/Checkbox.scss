@@ -1,0 +1,116 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+@import 'styles/typography';
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+
+  & label {
+    margin-left: rem(15px);
+  }
+
+  &.icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid $inputBorder;
+    height: 60px !important;
+    padding: 0;
+
+    & .prefix {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid $inputBorder;
+
+      & img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    &.checked {
+      border-color: #4d9c9b;
+      & .prefix {
+        background: #4d9c9b;
+        border-color: transparent;
+
+        & img {
+          filter: invert(1);
+        }
+      }
+    }
+
+    & span.checkbox {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      border-radius: 100px;
+      overflow: hidden;
+      height: 25px;
+      width: 25px;
+
+      &:not(.checkbox-checked) {
+        opacity: 0;
+      }
+    }
+
+    & .checkbox-inner {
+      width: 100%;
+      height: 100% !important;
+      border: unset;
+    }
+
+    & label {
+      margin-left: 20px;
+    }
+
+    &:before {
+      width: 60px;
+      height: 60px;
+      border-right: 1px solid $inputBorder;
+    }
+  }
+}
+
+.checkbox {
+  display: flex;
+
+  & input {
+    display: none;
+  }
+
+  & .checkbox-inner {
+    position: relative;
+    width: rem(24px);
+    height: rem(24px) !important;
+    border: 1px solid $inputBorder;
+  }
+
+  &.checkbox-checked {
+    & .checkbox-inner {
+      background: #4d9c9b;
+      border-color: #4d9c9b;
+
+      &:after {
+        content: '';
+        filter: invert(1);
+        background: url(../../../../icons/checkmark.svg) no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background-size: 65%;
+        background-position: center center;
+      }
+    }
+  }
+}

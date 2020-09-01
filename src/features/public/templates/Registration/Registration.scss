@@ -1,0 +1,105 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+
+.registerBlock {
+  display: flex;
+  flex-direction: column;
+  padding: rem(20px);
+
+  & h3 {
+    font-size: rem(20px);
+    padding-bottom: rem(40px);
+    font-weight: 500;
+    margin: 0 !important;
+  }
+
+  & .zh-form-item-label,
+  .zh-form-item {
+    margin: 0 !important;
+  }
+  & .zh-form-extra {
+    height: auto !important;
+    margin-bottom: 0;
+  }
+}
+
+.groupFields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: rem(720px);
+  margin-top: -(rem(10px));
+  margin-left: -(rem(10px));
+  margin-right: -(rem(10px));
+  margin-bottom: rem(40px);
+
+  & > div {
+    border-radius: 0;
+    &:first-child {
+      border-top-left-radius: rem(3px);
+      border-bottom-left-radius: rem(3px);
+    }
+
+    &:last-child {
+      border-top-right-radius: rem(3px);
+      border-bottom-right-radius: rem(3px);
+    }
+  }
+
+  &.column {
+    flex-direction: column;
+
+    & > div {
+      height: unset;
+      max-width: 100%;
+    }
+  }
+
+  & > input,
+  & > div {
+    display: flex;
+    align-items: center;
+    margin: rem(10px);
+    max-width: rem(340px);
+    height: rem(60px);
+    width: 100%;
+
+    & .rc-select-selection-placeholder,
+    & .rc-select-arrow,
+    & .rc-select-selection-item,
+    & .zh-input-container {
+      padding: rem(0 10px);
+    }
+
+    &.rc-select {
+      padding: 0;
+
+      & .rc-select-arrow {
+        right: rem(20px);
+      }
+      & .rc-select-selection-placeholder {
+        padding: 0 rem(5px);
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: rem(20px);
+
+  & .zh-button-wrapper:first-child {
+    margin-left: rem(-20px);
+  }
+
+  &.border {
+    border-top: 1px solid $inputBorder;
+    padding: rem(40px 0 0);
+  }
+
+  & .zh-button-wrapper:last-child {
+    height: rem(60px);
+    padding: rem(0 60px);
+  }
+}

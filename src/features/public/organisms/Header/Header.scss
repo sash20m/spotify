@@ -1,0 +1,49 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+
+header {
+  position: relative;
+  padding: rem(100px) rem(20px) rem(100px);
+  margin: rem(0 0 70px);
+  display: flex;
+  align-items: center;
+  background: #f4f3f2;
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.title {
+  position: relative;
+  font-size: rem(72px) !important;
+  font-weight: 500 !important;
+
+  &:before {
+    content: '';
+    width: 50vw;
+    height: rem(1px);
+    position: absolute;
+    top: 50%;
+    left: -50vw;
+    background: #469c9b;
+    margin-left: rem(-40px);
+  }
+}
+
+.subtitle {
+  margin-top: rem(40px);
+  font-size: rem(21px) !important;
+}
+
+.extra {
+  margin: rem(10px) 0;
+
+  & a {
+    margin-left: rem(10px);
+  }
+}

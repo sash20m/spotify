@@ -1,0 +1,134 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+@import 'styles/media-queries';
+
+.flex-data {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $inputBorder;
+  border-bottom: 2px solid $primary;
+}
+
+.flex-item {
+  display: flex;
+  justify-content: space-between;
+  padding: rem(25px);
+  border-bottom: 1px solid $inputBorder;
+
+  & svg,
+  & path {
+    fill: $primary;
+  }
+
+  &-map {
+    padding: 0;
+    border: none;
+  }
+
+  &-row {
+    width: 100%;
+    padding-right: 20px;
+
+    &-col {
+      display: flex;
+      flex-wrap: wrap;
+
+      &:not(:last-child) {
+        margin-bottom: rem(25px);
+      }
+
+      & > div {
+        flex: 0 1 33%;
+
+        &:not(:last-child) {
+          padding-right: rem(15px);
+        }
+      }
+
+      &.column {
+        flex-direction: column;
+      }
+    }
+
+    & .zh-info {
+      font-size: rem(14px);
+
+      &:first-child {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  & label {
+    display: flex;
+    font-size: rem(13px);
+    color: $labelText;
+    text-transform: uppercase;
+    margin-bottom: rem(10px);
+  }
+
+  &-actions {
+    white-space: nowrap;
+
+    & > div {
+      &:first-child {
+        margin-right: rem(15px);
+      }
+    }
+  }
+
+  @include mq($until: desktop) {
+    position: relative;
+
+    &-map &-row {
+      &-col {
+        flex-wrap: wrap;
+      }
+    }
+
+    &-row {
+      &-col {
+        & > div {
+          flex: 0 0 50%;
+
+          &:nth-last-child(2) {
+            padding-right: 0;
+          }
+          &:last-child {
+            flex: 0 0 100%;
+            margin-top: rem(25px);
+          }
+        }
+      }
+    }
+  }
+
+  @include mq($until: tablet) {
+    flex-direction: column;
+
+    &-map &-actions {
+      margin-top: 0;
+    }
+    &-actions {
+      margin-top: rem(25px);
+      display: flex;
+      justify-content: center;
+    }
+
+    &-row {
+      &-col {
+        & > div {
+          flex: 0 0 50%;
+
+          &:nth-last-child(2) {
+            padding-right: 0;
+          }
+          &:last-child {
+            flex: 0 0 100%;
+            margin-top: rem(25px);
+          }
+        }
+      }
+    }
+  }
+}

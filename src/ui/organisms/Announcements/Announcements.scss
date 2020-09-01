@@ -1,0 +1,51 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+@import '../../../styles/media-queries';
+
+.zh-announcement-items {
+  display: flex;
+
+  @include mq($until: small-desktop) {
+    display: block;
+  }
+
+  .zh-announcement-calendar {
+    margin-right: rem(30px);
+
+    @include mq($until: small-desktop) {
+      margin-bottom: rem(20px);
+    }
+
+    .zh-calendar {
+      height: fit-content;
+    }
+  }
+
+  .zh-announcement-right {
+    .zh-announcement-item-title {
+      font-size: rem(13px);
+      margin-bottom: rem(10px);
+      text-transform: uppercase;
+    }
+
+    .zh-announcement-item-content {
+      font-size: rem(14px);
+      margin-bottom: rem(10px);
+      line-height: rem(26px);
+    }
+
+    .zh-announcement-item-addressed {
+      .zh-announcement-item-addressed-title {
+        font-size: rem(13px);
+        margin-bottom: rem(10px);
+        text-transform: uppercase;
+      }
+
+      .zh-announcement-item-addressed-items {
+        > *:not(:last-child) {
+          margin-right: rem(15px);
+        }
+      }
+    }
+  }
+}

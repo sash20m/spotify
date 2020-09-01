@@ -1,0 +1,39 @@
+@import '../../../styles/palette';
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.zh-info {
+  position: relative;
+  @include fontSemiBold;
+  font-size: rem(12px);
+
+  &.zh-info {
+    &-icon {
+      padding-left: rem(20px);
+    }
+
+    &-loading {
+      transition: color 0.5s linear;
+      color: $unactiveText;
+    }
+
+    &-text {
+      &-regular {
+        color: $regularText;
+      }
+      &-primary {
+        color: $invertActiveBackground;
+      }
+    }
+  }
+
+  .zh-info-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    .zh-icon-clock path {
+      fill: #175248;
+    }
+  }
+}

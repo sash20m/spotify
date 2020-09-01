@@ -1,0 +1,122 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+@import '../../../styles/media-queries';
+
+.zh-profile-card {
+  border: 1px solid #e9e8e5;
+
+  .zh-profile-card-item {
+    padding: rem(15px);
+    display: flex;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e9e8e5;
+    }
+
+    &:nth-child(2) {
+      padding: rem(25px);
+
+      @include mq($until: small-desktop) {
+        padding-bottom: 0;
+        flex-wrap: wrap;
+      }
+
+      .zh-profile-card-contacts {
+        width: 25%;
+
+        @include mq($until: small-desktop) {
+          width: 50%;
+          margin-bottom: rem(25px);
+        }
+      }
+    }
+
+    .zh-profile-card-avatar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .zh-profile-card-avatar-details {
+        margin-left: rem(15px);
+
+        .zh-profile-card-avatar-title {
+          @include fontSemiBold;
+          font-size: rem(15px);
+          color: #000403;
+          margin-bottom: rem(5px);
+        }
+
+        .zh-profile-card-avatar-desc {
+          @include fontMedium;
+          font-size: rem(12px);
+          color: #000403;
+          margin-bottom: rem(5px);
+        }
+      }
+    }
+
+    .zh-profile-card-tools {
+      white-space: nowrap;
+
+      @include mq($until: tablet) {
+        white-space: normal;
+      }
+
+      > * {
+        @include mq($until: tablet) {
+          display: block;
+          margin-left: 0 !important;
+          margin-top: rem(10px);
+          white-space: nowrap;
+        }
+
+        &:not(:first-child) {
+          margin-left: rem(15px);
+        }
+      }
+    }
+
+    .zh-profile-card-contacts {
+      .zh-profile-card-contact {
+        &:not(:last-child) {
+          margin-bottom: rem(17.5px);
+        }
+
+        .zh-profile-card-contact-label {
+          text-transform: uppercase;
+          color: #00362d;
+          margin-bottom: rem(7.5px);
+        }
+
+        .zh-icon path {
+          fill: #469c9b;
+        }
+      }
+    }
+  }
+
+  .zh-profile-card-networks {
+    .zh-profile-card-networks-title {
+      font-size: rem(16px);
+      @include fontMedium;
+      color: #000403;
+      margin-bottom: rem(20px);
+    }
+
+    .zh-info {
+      padding-left: rem(30px);
+
+      &:not(:last-child) {
+        margin-bottom: rem(17.5px);
+      }
+
+      .zh-icon {
+        font-size: rem(17px);
+
+        path {
+          fill: #469c9b;
+        }
+      }
+    }
+  }
+}

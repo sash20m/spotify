@@ -1,0 +1,71 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.zh-sort-by {
+  padding: 0 !important;
+  border: 1px solid #dfe1e6;
+  border-radius: 4px;
+  width: rem(162.5px);
+
+  .zh-sort-by-title {
+    @include fontMedium;
+    font-size: rem(11px);
+    padding: rem(12.5px);
+    border-bottom: 1px solid #e9e8e5;
+    color: #3c3939;
+  }
+
+  .zh-sort-by-items {
+    .zh-sort-by-item {
+      position: relative;
+      padding: rem(12.5px);
+      font-size: rem(12px);
+      @include fontMedium;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #e9e8e5;
+      }
+
+      &-active {
+        @include fontBold;
+        color: #469c9b;
+      }
+
+      &:hover {
+        background-color: #f4f3f2;
+        color: #739898;
+      }
+
+      .zh-icon {
+        position: absolute;
+        right: rem(10px);
+        top: 50%;
+        transform: translateY(-50%);
+
+        path {
+          fill: #469c9b;
+        }
+      }
+    }
+  }
+}
+
+.zh-sort-by-button {
+  &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: rem(32.5px);
+    top: 0;
+    height: 100%;
+    width: rem(1px);
+    background-color: #e9e8e5;
+  }
+
+  .zh-button {
+    padding-left: rem(42.5px) !important;
+    white-space: nowrap;
+  }
+}

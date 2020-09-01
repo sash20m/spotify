@@ -1,0 +1,53 @@
+@import 'styles/helpers';
+@import 'styles/typography';
+
+.zh-checkbox label {
+  display: inline-flex;
+  cursor: pointer;
+
+  .zh-checkbox-mask {
+    display: none;
+
+    &:checked ~ .zh-checkbox-check-wrapper {
+      background-color: #104d43;
+      border-color: #104d43;
+      border-radius: 2px;
+      box-shadow: 0px 3px 4px 0px rgba(111, 116, 126, 0.12);
+
+      .zh-icon {
+        font-size: rem(9px);
+      }
+    }
+  }
+
+  .zh-checkbox-check-wrapper {
+    position: relative;
+    background-color: #f4f3f2;
+    transition: background-color 0.2s;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    width: rem(16px);
+    height: rem(16px);
+
+    .zh-icon {
+      transition: 0.4s;
+      font-size: rem(0);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .zh-checkbox-label {
+    padding-left: rem(8px);
+  }
+}
+
+.zh-checkbox-group {
+  .zh-checkbox {
+    &:not(:last-child) {
+      margin-bottom: rem(7.5px);
+    }
+  }
+}

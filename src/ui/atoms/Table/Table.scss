@@ -1,0 +1,237 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+@import '../../../styles/media-queries';
+
+.zh-table {
+  border-bottom: 2px solid #469c9b;
+
+  @include mq($until: small-desktop) {
+    display: none;
+  }
+
+  &.zh-table-size {
+    &-small {
+      td {
+        padding: rem(10px 17.5px);
+      }
+    }
+  }
+
+  .rc-table-content {
+    border: none;
+  }
+
+  th,
+  td {
+    border-color: #e9e8e5;
+    border-right: none;
+    padding: rem(17.5px);
+
+    &:first-child {
+      border-left: 1px solid #e9e8e5;
+    }
+
+    &:last-child {
+      border-right: 1px solid #e9e8e5;
+    }
+  }
+
+  th {
+    border-top: 1px solid #e9e8e5;
+  }
+
+  td {
+    @include fontSemiBold;
+    color: #104d43;
+  }
+
+  .rc-table-thead {
+    tr {
+      th.rc-table-cell {
+        position: relative;
+        @include fontMedium;
+        text-transform: uppercase;
+        color: #00362d;
+        text-align: left;
+        background-color: #fff;
+        font-size: rem(11px);
+
+        .zh-table-th-filtered {
+          cursor: pointer;
+          transition: 0.2s;
+
+          &.zh-table-th-filtered {
+            &-asc,
+            &-desc {
+              @include fontSemiBold;
+              color: #739898;
+
+              .zh-icon-arrow-down path {
+                fill: #739898;
+              }
+            }
+
+            &-desc {
+              .zh-icon-arrow-down {
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          &:hover {
+            color: #739898;
+
+            .zh-icon-arrow-down path {
+              fill: #739898;
+            }
+          }
+
+          .zh-icon-arrow-down {
+            margin-left: rem(5px);
+            position: relative;
+            top: rem(3px);
+            transition: 0.2s;
+
+            path {
+              fill: #767676;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .rc-table-tbody {
+    tr.rc-table-row {
+      &:hover {
+        &:nth-child(odd) td.rc-table-cell {
+          background-color: rgb(240, 240, 240);
+        }
+
+        &:nth-child(even) td.rc-table-cell {
+          background-color: rgb(245, 245, 245);
+        }
+      }
+
+      td.rc-table-cell {
+        transition: 0.2s;
+      }
+
+      &:nth-child(odd) td.rc-table-cell {
+        background-color: #f9f9f9;
+        font-size: rem(12px);
+      }
+    }
+
+    & button {
+      width: 100%;
+    }
+  }
+}
+
+.zh-table-mobile {
+  display: none;
+
+  @include mq($until: small-desktop) {
+    display: block;
+  }
+
+  .zh-table-mobile-item {
+    position: relative;
+    border: 1px solid #e9e8e5;
+    border-radius: 7px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 7px 27px 3px rgba(31, 105, 179, 0.05);
+
+    &:not(:last-child) {
+      margin-bottom: rem(15px);
+    }
+
+    .zh-info-icon {
+      top: rem(-1px);
+    }
+
+    .zh-table-mobile-item-key {
+      font-size: rem(16px);
+      position: absolute;
+      top: rem(13px);
+      right: rem(15px);
+      color: #ccc;
+    }
+
+    .zh-table-mobile-item-title {
+      padding: rem(15px 15px 10px);
+      font-size: rem(14px);
+      width: 100%;
+    }
+
+    .zh-table-mobile-item-desc {
+      padding: rem(0 15px 15px);
+      width: 100%;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #e9e8e5;
+      }
+    }
+
+    .zh-table-mobile-item-child {
+      padding: rem(15px);
+      width: 50%;
+
+      &:nth-child(even) {
+        border-right: 1px solid #e9e8e5;
+      }
+
+      &:last-child {
+        border-right: unset;
+      }
+
+      .zh-table-mobile-item-child-title {
+        display: block;
+        font-size: rem(10px);
+        margin-bottom: rem(5px);
+        color: #ccc;
+      }
+    }
+
+    .zh-table-mobile-item-action {
+      width: 100%;
+      border-top: 1px solid #469c9b;
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: rem(15px 5px);
+
+      > .flex {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      > * {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    &-child {
+      &:last-child {
+        width: 100%;
+
+        & button {
+          width: 100%;
+        }
+      }
+    }
+
+    .picker-label {
+      margin: 0;
+    }
+  }
+}

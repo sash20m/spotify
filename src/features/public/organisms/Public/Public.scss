@@ -1,0 +1,366 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+@import 'styles/typography';
+@import 'typography';
+
+$invertBorder: #104d43;
+
+.public {
+  z-index: 1;
+  position: relative;
+
+  .zh-table {
+    border-bottom: none;
+  }
+
+  & * {
+    font-size: rem(14px);
+    font-weight: 400;
+  }
+
+  & .zh-button,
+  & .header .title,
+  & h3 {
+    @include publicFontMedium;
+  }
+
+  .zh-breadcrumbs-wrapper {
+    position: absolute;
+    top: rem(10px);
+
+    .zh-breadcrumbs {
+      &-devider {
+        color: $primary;
+        padding: rem(0 10px);
+      }
+    }
+  }
+
+  .zh-button-wrapper {
+    position: relative;
+    text-align: unset;
+    border-radius: 0;
+    box-shadow: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.zh-button-type {
+      &-regular {
+        border: unset;
+
+        .zh-button {
+          width: 100%;
+        }
+      }
+      &-primary {
+        border: unset;
+
+        .zh-button {
+          border-color: transparent;
+        }
+      }
+      &-border {
+        background: transparent;
+        & .zh-button {
+          border-color: $primary;
+        }
+      }
+      &-invert {
+        border: unset;
+
+        & .zh-button {
+          border: 1px solid $invertBorder;
+        }
+      }
+      &-transparent {
+        border: unset;
+
+        & .zh-button {
+          border: none;
+        }
+      }
+    }
+  }
+
+  .zh-button {
+    height: rem(40px);
+    font-size: rem(16px);
+    border: rem(1px) solid $regularBorder;
+    background: transparent;
+    padding: rem(0 20px);
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  .zh-input-wrapper {
+    & input {
+      &::placeholder {
+        color: $regularText;
+      }
+    }
+  }
+
+  .zh-input {
+    @include fontRegular;
+    background: transparent;
+    border: none;
+    width: 100%;
+    display: block;
+    height: rem(32.5px);
+    font-size: rem(13px);
+    padding: rem(0 12.5px);
+
+    &-container {
+      width: 100%;
+      position: relative;
+    }
+
+    &-suffix {
+      left: inherit;
+      right: rem(10px);
+    }
+
+    &-empty {
+      background-color: $inputBackground !important;
+    }
+
+    &-type {
+      &-phone {
+        & input:before {
+          content: '';
+        }
+      }
+      &-daterange {
+        & input {
+          height: rem(42px);
+        }
+      }
+    }
+
+    &-mask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+
+      & i {
+        margin-left: rem(18px);
+        margin-right: rem(9px);
+      }
+    }
+
+    &:placeholder {
+      color: $unactiveText;
+    }
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  .select {
+    &-empty {
+      background-color: $inputBackground;
+    }
+  }
+
+  .rc-select {
+    &.transparent {
+      border: none;
+    }
+
+    & input {
+      cursor: pointer;
+    }
+
+    .rc-select-arrow-icon::after {
+      width: rem(12px);
+      height: rem(14px);
+      border: none;
+      background: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='chevron-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='svg-inline--fa fa-chevron-down fa-w-14 fa-lg'%3E%3Cpath fill='currentColor' d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z' class=''%3E%3C/path%3E%3C/svg%3E")
+        no-repeat;
+      background-size: contain;
+      transform: translateY(3px);
+    }
+
+    .rc-select-arrow {
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    .rc-select-selector,
+    .rc-select-selection-search-input {
+      width: 100%;
+      height: 100%;
+    }
+
+    .rc-select-selection-placeholder,
+    .rc-select-selection-item {
+      top: 50% !important;
+      transform: translate3d(0, -50%, 0);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: calc(100% - 30px);
+      white-space: nowrap;
+    }
+
+    .rc-select-selection-placeholder {
+      color: $regularText;
+    }
+  }
+
+  .select {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $inputBorder;
+
+    & label {
+      font-size: rem(12px);
+      width: 100%;
+      color: $primary;
+      padding-top: rem(10px);
+    }
+
+    & .rc-select {
+      background: transparent;
+      border: none;
+      height: 100%;
+    }
+  }
+
+  th {
+    color: #767676 !important;
+    text-transform: capitalize !important;
+  }
+
+  td,
+  th {
+    color: #000403;
+    font-size: rem(15px) !important;
+  }
+
+  .rc-table-cell {
+    background: #fff !important;
+    border: none !important;
+
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &:not(th) {
+      border-bottom: 1px solid $inputBorder !important;
+    }
+  }
+
+  .colInfo {
+    font-size: rem(17px);
+    .zh-info {
+      margin-top: rem(20px);
+      font-size: rem(15px);
+
+      & .zh-info-icon {
+        padding-top: rem(2px);
+      }
+    }
+    & svg,
+    & svg path {
+      fill: $primary;
+    }
+  }
+}
+
+.rc-select-dropdown {
+  box-shadow: 1px 1px 10px rgba($inputBorder, 0.5);
+
+  &.hideCheck {
+    & .rc-select-item {
+      padding: rem(15px);
+      border-color: $inputBorder;
+
+      &:hover {
+        background: $inputBorder;
+      }
+    }
+    & .rc-select-item-option-state {
+      display: none;
+    }
+  }
+
+  &.phone {
+    min-width: 100px !important;
+
+    & .rc-select-item {
+      padding: rem(10px);
+
+      &-option-state {
+        display: none;
+      }
+      &-option-content {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.zh-input {
+  &-phone {
+    display: flex;
+    align-items: center;
+    border-right: rem(1px) solid $inputBorder;
+    padding-right: rem(12px);
+    margin-right: rem(10px);
+    width: rem(230px);
+
+    & .select {
+      border: none;
+      & .rc-select {
+        margin: 0;
+      }
+
+      & .rc-select-arrow {
+        right: 0;
+      }
+    }
+
+    &-country {
+      margin-right: rem(10px);
+      min-width: rem(28px);
+      height: rem(28px);
+      background-size: cover !important;
+      background-position: center !important;
+      border-radius: rem(100px);
+    }
+
+    & .rc-select-selection-item {
+      display: flex;
+      align-items: center;
+    }
+
+    & .rc-select-selection-item:before {
+      content: '';
+      width: rem(25px);
+      height: rem(25px);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.rc-select-item-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}

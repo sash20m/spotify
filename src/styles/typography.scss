@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+// Typography
+@mixin fontLight {
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
+
+@mixin fontRegular {
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+@mixin fontMedium {
+  font-family: 'Montserrat';
+  font-weight: 500;
+}
+
+@mixin fontSemiBold {
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+
+@mixin fontBold {
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+
+@mixin fontBlack {
+  font-family: 'Montserrat';
+  font-weight: 900;
+}

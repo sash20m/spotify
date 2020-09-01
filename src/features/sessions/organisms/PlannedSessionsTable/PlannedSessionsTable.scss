@@ -1,0 +1,60 @@
+@import 'styles/helpers';
+@import 'styles/typography';
+
+.zh-planned-sessions-table .zh-table {
+  td {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &.zh-select-user-cell,
+    &.zh-period-cell {
+      padding: 0;
+    }
+  }
+
+  .zh-send-message-button .zh-button {
+    padding-top: rem(5px);
+    padding-bottom: rem(5px);
+    font-size: rem(12px);
+  }
+
+  .picker-label {
+    // min-width: unset;
+    // max-width: unset;
+
+    border-left: 1px solid #e9e8e5;
+    border-right: 1px solid #e9e8e5;
+
+    .zh-input-type-daterange {
+      border-radius: 0;
+      background-color: transparent;
+      border-color: transparent;
+
+      &:first-child {
+        .zh-input {
+          padding-left: 30px !important;
+          padding-right: 0 !important;
+        }
+      }
+
+      &:not(:first-child) {
+        .zh-input {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .zh-input-prefix {
+          display: none;
+        }
+      }
+
+      .zh-input-prefix svg {
+        font-size: rem(10px);
+      }
+
+      .zh-input {
+        font-size: rem(12px);
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@import '../../../styles/palette';
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.zh-input-wrapper {
+  position: relative;
+  border: 1px solid $unactive;
+  background-color: $activeBackground;
+  border-radius: 4px;
+
+  &.has-prefix {
+    .zh-input {
+      padding-left: rem(32.5px);
+    }
+  }
+
+  &.has-suffix {
+    .zh-input {
+      padding-right: rem(32.5px);
+    }
+  }
+
+  &.zh-input-wrapper {
+    &-active {
+      border: 1px solid $primaryBorder;
+      background-color: $activeBackground;
+
+      .zh-input {
+        color: $regularText;
+      }
+
+      .zh-input-prefix path,
+      .zh-input-suffix path {
+        fill: $primaryBorder;
+      }
+    }
+
+    &-unactive {
+      border: 1px solid $unactive;
+      background-color: $activeBackground;
+    }
+  }
+
+  &.disabled {
+    border-color: $unactive;
+    background-color: $disabledBackground;
+    transition: background-color 0.5s linear;
+
+    &:placeholder {
+      color: #878787;
+    }
+
+    svg path {
+      fill: #878787 !important;
+    }
+
+    .zh-input {
+      color: #878787;
+      cursor: not-allowed;
+    }
+  }
+
+  &.zh-input-type {
+    &-text {
+      border: 1px dashed $unactive;
+      background-color: $disabledBackground;
+
+      .zh-input {
+        color: #878787;
+        cursor: inherit;
+      }
+    }
+  }
+
+  &.zh-input-style {
+    &-transparent {
+      background-color: transparent !important;
+      border-color: transparent !important;
+    }
+
+    &-grey {
+      background-color: #f9f9f9;
+    }
+  }
+
+  .zh-input-prefix,
+  .zh-input-suffix {
+    position: absolute;
+    left: rem(10px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+
+    &.not-clickable {
+      pointer-events: none;
+    }
+
+    &.clickable {
+      cursor: pointer;
+
+      &:hover path {
+        fill: $primaryBorder;
+      }
+    }
+
+    svg path {
+      fill: $unactive2;
+    }
+  }
+
+  .zh-input-suffix {
+    left: inherit;
+    right: rem(10px);
+  }
+
+  .zh-input {
+    @include fontRegular;
+    background: transparent;
+    border: none;
+    width: 100%;
+    display: block;
+    height: rem(32.5px);
+    font-size: rem(13px);
+    padding: rem(0 12.5px);
+
+    &:placeholder {
+      color: $unactiveText;
+    }
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+}

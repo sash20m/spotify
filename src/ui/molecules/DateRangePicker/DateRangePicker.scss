@@ -1,0 +1,150 @@
+@import '../../../styles/palette';
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.picker-container {
+  position: absolute;
+  background: #fff;
+  border: rem(1px) solid $inputBorder;
+  transform: translate3d(-50%, rem(55px, 0));
+  max-width: rem(600px);
+  width: max-content;
+  box-shadow: rem(1px 1px 10px) rgba($inputBorder, 0.5);
+  z-index: 9;
+
+  & .DayPicker-wrapper {
+    outline: 0;
+    padding: 0;
+
+    & .DayPicker-Months {
+      & .DayPicker-Month {
+        display: flex;
+        flex-direction: column;
+        padding: rem(20px);
+        margin: 0;
+
+        & .DayPicker-WeekdaysRow {
+          display: flex;
+          justify-content: space-around;
+        }
+
+        & .DayPicker-Caption {
+          margin: rem(-20px -20px 0);
+          padding: rem(20px);
+          border-bottom: rem(1px) solid #efeeea;
+        }
+
+        &:first-child {
+          border-right: rem(1px) solid $inputBorder;
+        }
+      }
+    }
+  }
+}
+
+.picker-label {
+  display: flex;
+  max-width: rem(320px);
+  margin: rem(0 15px);
+  min-width: rem(250px);
+
+  & .zh-input-prefix {
+    left: rem(10px);
+
+    & svg {
+      font-size: rem(20px);
+    }
+  }
+
+  & input {
+    cursor: pointer;
+    padding-left: rem(40px) !important;
+  }
+
+  & :first-child {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  & :last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:not(.open) .zh-input-wrapper {
+    border-color: $inputBorder;
+
+    & svg {
+      &,
+      & path {
+        fill: $unactiveText !important;
+      }
+    }
+  }
+
+  &.open .zh-input-wrapper {
+    & svg {
+      &,
+      & path {
+        fill: $primary !important;
+      }
+    }
+  }
+}
+
+.DayPicker-Caption > div {
+  text-transform: capitalize;
+}
+
+.DayPicker-NavButton--prev,
+.DayPicker-NavButton--next {
+  outline: 0;
+  right: rem(18.25px);
+  top: rem(18.25px);
+}
+
+.DayPicker-NavButton--prev {
+  transform: rotate(90deg);
+  background: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='chevron-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='svg-inline--fa fa-chevron-down fa-w-14 fa-lg'%3E%3Cpath fill='currentColor' d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z' class=''%3E%3C/path%3E%3C/svg%3E")
+    no-repeat;
+}
+
+.DayPicker-NavButton--next {
+  margin: 0;
+  transform: rotate(-90deg);
+  background: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='chevron-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' class='svg-inline--fa fa-chevron-down fa-w-14 fa-lg'%3E%3Cpath fill='currentColor' d='M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z' class=''%3E%3C/path%3E%3C/svg%3E")
+    no-repeat;
+}
+
+.DayPicker-Months {
+  .DayPicker-Day {
+    outline: 0;
+    height: rem(32px);
+    width: rem(32px);
+    border-radius: 0;
+  }
+
+  .DayPicker-Day--today {
+    color: $primary;
+  }
+
+  .DayPicker-Day--start {
+    background: rgba($primary, 0.2) !important;
+    color: $primary !important;
+  }
+
+  .DayPicker-Day--end:not(.DayPicker-Day--start) {
+    background: $invertActiveBackground !important;
+  }
+
+  .DayPicker-Day--selected {
+    &:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+      background: $primary;
+
+      &:hover {
+        background: $invertActiveBackground;
+      }
+    }
+  }
+}

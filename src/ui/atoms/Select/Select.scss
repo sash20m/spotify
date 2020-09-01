@@ -1,0 +1,112 @@
+@import '../../../styles/palette';
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.rc-select {
+  width: 100%;
+  border: 1px solid $unactive;
+  background-color: $activeBackground;
+  font-size: rem(13px);
+  border-radius: 4px;
+
+  &.select-style-grey {
+    background-color: #f9f9f9;
+  }
+
+  .rc-select-arrow {
+    right: rem(10px);
+    top: rem(7.5px);
+  }
+
+  .rc-select-selector,
+  .rc-select-selection-search-input {
+    padding: 0 !important;
+    border: none !important;
+    min-height: rem(32.5px);
+  }
+
+  .rc-select-selection-placeholder,
+  .rc-select-selection-item {
+    @include fontRegular;
+    top: rem(9px) !important;
+    left: rem(12.5px) !important;
+  }
+
+  .rc-select-selection-placeholder {
+    opacity: 1;
+    color: $unactiveText;
+  }
+
+  .rc-select-selection-item {
+    opacity: 1;
+    color: $regularText;
+  }
+}
+
+.rc-select-dropdown {
+  border: 1px solid $regularBorder;
+  min-height: rem(100px);
+  position: absolute;
+  background: $activeBackground;
+  border-radius: 4px;
+  z-index: 1001;
+
+  .rc-select-item {
+    @include fontRegular;
+    padding: rem(7.5px 7.5px 7.5px 40px);
+    cursor: pointer;
+    font-size: rem(12px);
+    cursor: pointer;
+
+    &:not(:first-child) {
+      border-top: 1px solid $regularBorder;
+    }
+
+    &.rc-select-item-option-active {
+      background: $secondaryBackgroundHalf;
+    }
+
+    &.rc-select-item-option-selected {
+      background: $activeBackground;
+
+      &.rc-select-item-option-active,
+      &:hover {
+        background: $secondaryBackground;
+      }
+
+      .rc-select-item-option-state {
+        transition: 0.3s ease-out;
+        box-shadow: 0px 3px 4px 0px rgba(111, 116, 126, 0.12);
+        background: $invertActiveBackground;
+        border-color: $invertActiveBackground;
+
+        .rc-select-item-option-state-icon {
+          color: $invertRegularText;
+          font-size: rem(12px);
+        }
+      }
+    }
+
+    .rc-select-item-option-state {
+      right: inherit;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 12.5px;
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 4px;
+      background: $unactiveBackground;
+      border: 1px solid $secondaryBorder;
+      transition: 0.3s;
+
+      .rc-select-item-option-state-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: rem(0);
+        transition: 0.3s;
+      }
+    }
+  }
+}

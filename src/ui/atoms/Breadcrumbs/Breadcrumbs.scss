@@ -1,0 +1,64 @@
+@import '../../../styles/palette';
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.zh-breadcrumbs-wrapper {
+  padding: rem(10px 0);
+
+  .zh-breadcrumbs {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    .zh-breadcrumb-item {
+      list-style: none;
+      @include fontRegular;
+      font-size: rem(12px);
+      display: flex;
+
+      > * {
+        transition: color 0.3s;
+      }
+
+      .zh-breadcrumbs-item-loading {
+        color: #ccc;
+
+        .zh-loader-spinner {
+          display: inline-block;
+          margin-right: rem(7.5px);
+          vertical-align: rem(-3px);
+        }
+      }
+
+      .zh-breadcrumbs-item-regular {
+        color: #767676;
+      }
+
+      .zh-breadcrumbs-item-link {
+        color: #000403;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      .zh-breadcrumbs-item-disabled {
+        color: #ccc;
+        cursor: not-allowed;
+      }
+
+      .zh-icon {
+        position: relative;
+        top: rem(2px);
+        margin: rem(0 10px);
+        font-size: rem(12px);
+
+        path {
+          fill: #d1e0e0;
+        }
+      }
+    }
+  }
+}

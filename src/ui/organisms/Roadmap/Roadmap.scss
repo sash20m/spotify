@@ -1,0 +1,133 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+@import '../../../styles/media-queries';
+
+.zh-roadmap-wrapper {
+  .zh-roadmap {
+    padding-top: rem(35px);
+    display: flex;
+    position: relative;
+    border-top: 1px solid #dfe1e6;
+
+    @include mq($until: small-desktop) {
+      display: block;
+    }
+
+    &:not(:first-child) {
+      border-top-color: #e9e8e5;
+    }
+
+    .zh-roadmap-left {
+      position: relative;
+      width: rem(230px);
+
+      @include mq($until: small-desktop) {
+        width: 100%;
+        margin-bottom: rem(25px);
+      }
+
+      &:before {
+        content: ' ';
+        position: absolute;
+        left: calc(50% - 12.5px);
+        top: 0;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 100%;
+        background-color: #dfddd6;
+
+        @include mq($until: small-desktop) {
+          display: none;
+        }
+      }
+
+      &:after {
+        content: ' ';
+        position: absolute;
+        right: -50%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 1px;
+        background-color: #dfddd6;
+
+        @include mq($until: small-desktop) {
+          display: none;
+        }
+      }
+
+      .zh-roadmap-dot {
+        position: absolute;
+        display: block;
+        position: absolute;
+        left: calc(50% - 12.5px);
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        width: 26px;
+        height: 26px;
+        z-index: 1;
+
+        @include mq($until: small-desktop) {
+          display: none;
+        }
+
+        &:after {
+          content: ' ';
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 8px;
+          height: 8px;
+          background-color: #ffffff;
+          border: 4px solid #469c9b;
+          border-radius: 50%;
+        }
+      }
+
+      .zh-roadmap-target {
+        padding: rem(7.5px);
+        text-align: center;
+        width: calc(100% - 40px);
+        border: 1px solid #dfddd6;
+        border-radius: 4px;
+        @include fontSemiBold;
+        font-size: rem(14px);
+        color: #000403;
+        margin-right: auto;
+        background-color: #fff;
+        position: relative;
+        z-index: 1;
+
+        @include mq($until: small-desktop) {
+          width: auto;
+          margin: rem(0 25px);
+
+          &:after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100%;
+            background-color: #dfddd6;
+          }
+        }
+      }
+    }
+
+    .zh-roadmap-right {
+      position: relative;
+      width: 100%;
+      border: 1px solid #e9e8e5;
+      border-bottom: 2px solid #469c9b;
+      padding: rem(30px 25px);
+      min-height: rem(125px);
+      background-color: #fff;
+      z-index: 2;
+    }
+  }
+}

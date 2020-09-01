@@ -1,0 +1,43 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.zh-progressbar {
+  display: flex;
+  align-items: center;
+
+  .zh-progressbar-percentage {
+    @include fontMedium;
+    color: #767676;
+    font-size: rem(11px);
+    text-align: right;
+
+    // keep in px
+    width: 30px;
+  }
+
+  .zh-progressbar-bar {
+    background-color: #dfe1e6;
+    border-radius: 4px;
+    margin-left: rem(12.5px);
+    height: 4px;
+    width: 100%;
+
+    .zh-progressbar-bar-line {
+      height: 100%;
+      background: rgba(70, 156, 155, 0.6);
+      transition: width 0.3s, background-color 0.3s;
+
+      &.over-25 {
+        background: rgba(70, 156, 155, 0.7);
+      }
+
+      &.over-50 {
+        background: rgba(70, 156, 155, 0.8);
+      }
+
+      &.over-75 {
+        background: rgba(70, 156, 155, 1);
+      }
+    }
+  }
+}

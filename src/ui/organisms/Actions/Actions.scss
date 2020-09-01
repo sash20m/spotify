@@ -1,0 +1,45 @@
+@import '../../../styles/helpers';
+@import '../../../styles/typography';
+
+.zh-action-tooltip {
+  min-width: rem(140px);
+  padding: 0 !important;
+
+  .zh-action-tooltip-title {
+    @include fontMedium;
+    font-size: rem(11px);
+    padding: rem(12.5px);
+    border-bottom: 1px solid #e9e8e5;
+    color: #3c3939;
+  }
+
+  .zh-action-tooltip-items {
+    .zh-action-tooltip-item {
+      position: relative;
+      padding: rem(12.5px);
+      font-size: rem(12px);
+      @include fontMedium;
+      cursor: pointer;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: #f4f3f2;
+        color: #739898;
+      }
+    }
+  }
+}
+
+.zh-action-tooltip-icon {
+  cursor: pointer;
+  display: block;
+
+  &:hover path {
+    fill: #739898;
+  }
+
+  path {
+    transition: 0.2s;
+    fill: #00362d;
+  }
+}

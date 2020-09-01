@@ -1,0 +1,187 @@
+@import './normalize', './helpers', './media-queries', './palette', './typography';
+
+// @include mq-show-breakpoints;
+
+html,
+body {
+  display: block;
+  font-size: rem(13px);
+  @include fontMedium;
+  color: $regularText;
+
+  @include mq($until: desktop) {
+    font-size: rem(12.5px);
+  }
+
+  @include mq($until: small-desktop) {
+    font-size: rem(10px);
+  }
+
+  ::-webkit-scrollbar {
+    width: rem(24px);
+    background: $inputBorder;
+    border-right: rem(11px) solid #fff;
+    border-left: rem(11px) solid #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    height: rem(100px);
+    border-right: rem(8px) solid transparent;
+    border-left: rem(8px) solid transparent;
+    background-clip: padding-box;
+    background-color: $primary;
+    box-shadow: inset rem(-1px -1px 0px) rgba(0, 0, 0, 0.05), inset rem(1px 1px 0px) rgba(0, 0, 0, 0.05);
+
+    &:active {
+      background-color: $invertActiveBackground;
+    }
+  }
+
+  ::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sb-show-main {
+  padding: rem(25px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: rem(16px);
+  @include fontSemiBold;
+  margin-bottom: rem(20px);
+}
+
+h2 {
+  font-size: rem(14px);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.grey {
+  color: #ccc;
+}
+
+a {
+  text-decoration: none;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid $inputBorder;
+  padding: rem(12.5px);
+  min-height: rem(50px);
+  outline: none;
+  border-radius: rem(4px);
+}
+
+hr {
+  border-bottom: none;
+  border-top: rem(1px) solid $inputBorder;
+}
+
+hr.hr {
+  margin: rem(20px -20px 20px);
+}
+
+.hide {
+  display: none;
+}
+
+.hideOnSmallTablet {
+  @include mq($until: small-tablet) {
+    display: none;
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &-margin-between {
+    > *:not(:first-child) {
+      margin-left: rem(15px);
+    }
+  }
+
+  &-between {
+    justify-content: space-between;
+  }
+
+  &-center {
+    justify-content: center;
+  }
+
+  &-column {
+    flex-direction: column;
+  }
+}
+
+.pt {
+  &-0 {
+    padding-top: 0;
+  }
+
+  &-5 {
+    padding-top: 5px;
+  }
+}
+
+.mb {
+  &-5 {
+    margin-bottom: rem(5px);
+  }
+
+  &-10 {
+    margin-bottom: rem(10px);
+  }
+
+  &-15 {
+    margin-bottom: rem(15px);
+  }
+
+  &-20 {
+    margin-bottom: rem(20px);
+  }
+
+  &-25 {
+    margin-bottom: rem(25px);
+  }
+
+  &-30 {
+    margin-bottom: rem(30px);
+  }
+
+  &-35 {
+    margin-bottom: rem(35px);
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
