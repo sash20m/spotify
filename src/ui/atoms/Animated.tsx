@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 
 interface Props {
@@ -19,10 +19,10 @@ export const Animated: React.FC<Props> = ({
   className = '',
   ...props
 }) => {
-  const [loading, setLoading] = React.useState(true);
-  const timer = React.useRef<NodeJS.Timeout>();
+  const [loading, setLoading] = useState(true);
+  const timer = useRef<NodeJS.Timeout>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     return (): void => {
       if (timer.current !== undefined) {
         clearTimeout(timer.current);
@@ -30,7 +30,7 @@ export const Animated: React.FC<Props> = ({
     };
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onStopLoading = (): void => {
       if (!props.loading) {
         if (debounce) {

@@ -1,1 +1,0 @@
-export { InstituteLayout } from './InstituteLayout';

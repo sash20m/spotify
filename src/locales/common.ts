@@ -6,7 +6,7 @@ export const common = {
   },
   login: {
     en: 'Login',
-    ro: 'Întră',
+    ro: 'Intră',
     ru: 'Войти',
   },
   signup: {
