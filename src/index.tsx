@@ -1,21 +1,18 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import { CreateRouter } from 'estafette-router';
-import { CreateIntl } from 'estafette-intl';
-import { messages } from 'locales';
-import { UserProvider } from 'contexts';
-import { routes } from 'routes';
 import { register as registerServiceWorker } from 'libs/serviceWorker';
-import { history } from 'libs/history';
+import { routes } from 'routes';
+import CreateRouter from './libs/CreateRouter';
+import { getToken } from 'libs/http/getToken';
 
 import 'styles/index.scss';
 
+getToken();
+
 render(
-  <UserProvider>
-    <CreateIntl defaultLocale={localStorage.getItem('lang') || 'en'} messages={messages}>
-      <CreateRouter routes={routes} history={history} />
-    </CreateIntl>
-  </UserProvider>,
+  <React.StrictMode>
+    <CreateRouter routes={routes} />
+  </React.StrictMode>,
   document.getElementById('root'),
 );
 

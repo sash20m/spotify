@@ -1,0 +1,46 @@
+@import 'styles/helpers';
+
+.volume-controller {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 rem(10px) 0 rem(10px);
+
+  &__render {
+    display: flex;
+    width: 100%;
+
+    &__bg {
+      height: rem(3.7px);
+      width: 100%;
+      border-radius: 10px;
+      align-self: center;
+    }
+  }
+
+  &__thumb {
+    height: 12px;
+    width: 12px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 6px rgba(170, 170, 170, 0.466);
+    outline: none;
+
+    &__dragg {
+      height: 16px;
+      width: 5px;
+
+      .blueBG {
+        background-color: #548bf4;
+      }
+
+      .greyBG {
+        background-color: #ccc;
+      }
+    }
+  }
+}

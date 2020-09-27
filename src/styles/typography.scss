@@ -1,32 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url(//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham);
+@import url(https://fonts.googleapis.com/css2?family=Raleway&display=swap);
+
+// @font-face {
+//   font-family: "Gotham";
+//   // src: url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.eot");
+//   src: url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.woff") format("woff"), url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3a47f5f06b5484abfeee9eac90348a9c.svg#Gotham") format("svg");
+// }
 
 // Typography
-@mixin fontLight {
-  font-family: 'Montserrat';
-  font-weight: 300;
+@mixin Gotham {
+  font-family: 'Gotham';
 }
 
-@mixin fontRegular {
-  font-family: 'Montserrat';
-  font-weight: 400;
-}
-
-@mixin fontMedium {
-  font-family: 'Montserrat';
-  font-weight: 500;
-}
-
-@mixin fontSemiBold {
-  font-family: 'Montserrat';
-  font-weight: 600;
-}
-
-@mixin fontBold {
-  font-family: 'Montserrat';
-  font-weight: 700;
-}
-
-@mixin fontBlack {
-  font-family: 'Montserrat';
-  font-weight: 900;
+@mixin Raleway {
+  font-family: 'Raleway', sans-serif;
 }

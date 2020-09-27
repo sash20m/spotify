@@ -1,8 +1,7 @@
 const path = require('path');
-const { override, useEslintRc } = require('customize-cra');
 
 module.exports = {
-  stories: ['../src/ui/**/*.stories.tsx', '../src/ui/organisms/**/*.stories.tsx'],
+  stories: ['../src/ui/**/**/*.stories.tsx', '../src/ui/organisms/**/*.stories.tsx'],
   addons: [
     '@storybook/preset-create-react-app',
     '@storybook/addon-actions',
@@ -16,5 +15,4 @@ module.exports = {
       },
     },
   ],
-  webpack: override(useEslintRc(path.resolve(__dirname, '../.eslintrc.js'))),
 };

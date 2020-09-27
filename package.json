@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@svgr/webpack": "^5.4.0",
+    "@types/react-router-dom": "^5.1.5",
     "axios": "^0.19.2",
     "dayjs": "^1.8.33",
     "estafette": "^1.0.8",
@@ -12,6 +14,8 @@
     "react-animate-height": "^2.0.23",
     "react-cookies": "^0.1.1",
     "react-dom": "^16.13.1",
+    "react-range": "^1.7.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
@@ -29,7 +33,6 @@
     "@types/react-dom": "16.9.4",
     "@types/react-draft-wysiwyg": "^1.13.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "customize-cra": "^1.0.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-react": "^1.1.7",
@@ -42,14 +45,12 @@
     "lint-staged": "^10.2.11",
     "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
-    "react-app-rewired": "^2.1.6",
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "start": "npx react-app-rewired start",
-    "build": "npx react-app-rewired build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "preanalyze": "npx react-app-rewired build"
+    "build-storybook": "build-storybook -s public"
   }
 }

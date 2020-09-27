@@ -1,0 +1,35 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+@import 'styles/media-queries';
+
+.sidebar {
+  width: rem(230px);
+  height: calc(100vh - 90px);
+  background-color: $sidebarBackground;
+  padding-left: rem(22px);
+  padding-top: rem(24.5px);
+
+  &__logo {
+    width: 63%;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+
+    &__item {
+      color: $secondaryColor;
+      font-size: rem(12.5px);
+      margin-bottom: rem(22px);
+
+      .icon {
+        width: 20px;
+        height: 20px;
+        fill: $secondaryColor;
+        margin-right: rem(17px);
+        vertical-align: middle;
+      }
+    }
+  }
+}

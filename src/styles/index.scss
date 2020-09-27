@@ -5,9 +5,8 @@
 html,
 body {
   display: block;
-  font-size: rem(13px);
-  @include fontMedium;
-  color: $regularText;
+  font-size: rem(14px);
+  @include Gotham;
 
   @include mq($until: desktop) {
     font-size: rem(12.5px);
@@ -17,43 +16,11 @@ body {
     font-size: rem(10px);
   }
 
-  ::-webkit-scrollbar {
-    width: rem(24px);
-    background: $inputBorder;
-    border-right: rem(11px) solid #fff;
-    border-left: rem(11px) solid #fff;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    height: rem(100px);
-    border-right: rem(8px) solid transparent;
-    border-left: rem(8px) solid transparent;
-    background-clip: padding-box;
-    background-color: $primary;
-    box-shadow: inset rem(-1px -1px 0px) rgba(0, 0, 0, 0.05), inset rem(1px 1px 0px) rgba(0, 0, 0, 0.05);
-
-    &:active {
-      background-color: $invertActiveBackground;
-    }
-  }
-
-  ::-webkit-scrollbar-button {
-    width: 0;
-    height: 0;
-    display: none;
-  }
-
-  ::-webkit-scrollbar-corner {
-    background-color: transparent;
-  }
+  overflow: hidden;
 }
 
 * {
   box-sizing: border-box;
-}
-
-.sb-show-main {
-  padding: rem(25px);
 }
 
 h1,
@@ -68,7 +35,7 @@ h6 {
 
 h1 {
   font-size: rem(16px);
-  @include fontSemiBold;
+  @include Gotham;
   margin-bottom: rem(20px);
 }
 
@@ -90,20 +57,6 @@ a {
   text-decoration: none;
 }
 
-textarea {
-  width: 100%;
-  border: 1px solid $inputBorder;
-  padding: rem(12.5px);
-  min-height: rem(50px);
-  outline: none;
-  border-radius: rem(4px);
-}
-
-hr {
-  border-bottom: none;
-  border-top: rem(1px) solid $inputBorder;
-}
-
 hr.hr {
   margin: rem(20px -20px 20px);
 }
@@ -115,30 +68,6 @@ hr.hr {
 .hideOnSmallTablet {
   @include mq($until: small-tablet) {
     display: none;
-  }
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-
-  &-margin-between {
-    > *:not(:first-child) {
-      margin-left: rem(15px);
-    }
-  }
-
-  &-between {
-    justify-content: space-between;
-  }
-
-  &-center {
-    justify-content: center;
-  }
-
-  &-column {
-    flex-direction: column;
   }
 }
 
@@ -184,4 +113,8 @@ hr.hr {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

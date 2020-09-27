@@ -15,7 +15,7 @@ export const axiosHeadersUpdater = (): void => {
   const token = load('jwt-token');
 
   if (token) {
-    axios.defaults.headers.common.Authorization = `Token ${token}`;
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   } else if (axios.defaults.headers.common.Authorization) {
     delete axios.defaults.headers.common.Authorization;
   }
