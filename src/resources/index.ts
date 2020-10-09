@@ -1,0 +1,1 @@
+export { defaultSong } from './defaultSong';

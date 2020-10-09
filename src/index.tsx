@@ -5,13 +5,32 @@ import { routes } from 'routes';
 import CreateRouter from './libs/CreateRouter';
 import { getToken } from 'libs/http/getToken';
 
+import { CurrentSongProvider, IsPlayingProvider, NeighborSongsProvider, LanguageProvider } from 'contexts';
+import { Player } from 'ui/molecules';
 import 'styles/index.scss';
 
+import { CreateIntl } from 'estafette-intl';
+import { messages } from 'locales';
+
 getToken();
+sessionStorage.removeItem('connected');
 
 render(
   <React.StrictMode>
-    <CreateRouter routes={routes} />
+    <LanguageProvider>
+      {(language) => (
+        <IsPlayingProvider>
+          <NeighborSongsProvider>
+            <CurrentSongProvider>
+              <CreateIntl defaultLocale={language} messages={messages}>
+                <CreateRouter routes={routes} />
+                <Player />
+              </CreateIntl>
+            </CurrentSongProvider>
+          </NeighborSongsProvider>
+        </IsPlayingProvider>
+      )}
+    </LanguageProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

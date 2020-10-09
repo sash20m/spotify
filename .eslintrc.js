@@ -20,6 +20,7 @@ module.exports = {
     jest: true,
   },
   rules: {
+    'react-hooks/exhaustive-deps': 'off',
     'prettier/prettier': ['error', { singleQuote: true }],
     'react/prop-types': 'off',
     'react/display-name': 'off',

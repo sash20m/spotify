@@ -1,15 +1,26 @@
 @import 'styles/helpers';
+@import 'styles/palette';
+@import 'styles/helpers';
+
+@import 'styles/typography';
 
 .tracker {
   display: flex;
   width: 90%;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: row;
   margin: 0 rem(10px) 0 rem(10px);
+  @include Gotham;
+
+  .timer {
+    width: rem(35px);
+  }
 
   &__render {
     display: flex;
     width: 100%;
+    margin-left: rem(7px);
+    margin-right: rem(7px);
 
     &__bg {
       height: rem(3.7px);

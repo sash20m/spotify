@@ -6,7 +6,6 @@ export const getToken = async (): Promise<void> => {
   await auth
     .getToken<AccessToken>()
     .then((data) => {
-      console.log(data, 'eee');
       if (data.data) {
         save('jwt-token', `${data.data.access_token}`, { path: '/' });
       }

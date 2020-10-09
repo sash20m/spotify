@@ -7,9 +7,9 @@
 ## i. setup ENV
 
 ```
-REACT_APP_API_URL = https://eurasia-precept-api.devebs.net/
-REACT_APP_SSO_URL = https://auth.api.dev.ebs.io/
-REACT_APP_SERVICE_TOKEN = your_service_token
+REACT_APP_ACCESS_URL=https://accounts.spotify.com/api/token
+REACT_APP_API_URL=https://api.spotify.com/v1
+REACT_APP_SECRET_KEY=YOUR_SPOTIFY_SECRET_KEY
 ```
 
 ## ii. install deps

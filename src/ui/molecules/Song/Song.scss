@@ -1,0 +1,129 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+
+@import 'styles/typography';
+
+.song-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  height: rem(55px);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background: none;
+  min-width: rem(640px);
+
+  &:hover {
+    background-color: $musicItemHover;
+  }
+
+  &:focus {
+    background-color: $musicItemFocus;
+  }
+
+  &:focus .album {
+    color: white;
+  }
+
+  &:focus .song-length {
+    color: white;
+  }
+
+  &:hover .album {
+    color: white;
+  }
+
+  &:hover .song-length {
+    color: white;
+  }
+
+  .song-controller {
+    margin-right: rem(17px);
+    margin-left: rem(17px);
+
+    .count {
+      color: $secondaryColor;
+      @include Raleway;
+      width: 12px;
+      font-size: rem(15px);
+    }
+
+    .play-icon {
+      margin-top: 5px;
+      width: 12px;
+      height: 12px;
+      fill: white;
+    }
+  }
+
+  .song-info {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+
+    @media only screen and (max-width: 1000px) {
+      width: 37%;
+    }
+
+    &__cover {
+      width: rem(40px);
+      height: rem(40px);
+      margin-right: rem(15px);
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: white;
+      @include Raleway;
+      width: 90%;
+      text-overflow: ellipsis;
+      text-align: left;
+      overflow: hidden;
+
+      &__title {
+        font-size: rem(15px);
+        width: 85%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+
+        &--green {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          font-size: rem(15px);
+          color: $primaryColor;
+        }
+      }
+
+      &__artist {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 40%;
+
+        @include Gotham;
+        color: $secondaryColor;
+        font-size: rem(12px);
+      }
+    }
+  }
+
+  .album {
+    width: 30%;
+    text-align: left;
+    @include Raleway;
+    color: $secondaryColor;
+  }
+
+  .song-length {
+    width: auto;
+    @include Raleway;
+    color: $secondaryColor;
+    margin-left: 70px;
+  }
+}

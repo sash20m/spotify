@@ -6,4 +6,4 @@ export default {
   component: SongTracker,
 };
 
-export const regular = (): React.ReactNode => <SongTracker />;
+export const regular = (): React.ReactNode => <SongTracker max={191000} />;

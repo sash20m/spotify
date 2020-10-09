@@ -1,27 +1,51 @@
 @import 'styles/palette';
 @import 'styles/helpers';
-@import 'styles/media-queries';
+
+@import 'styles/typography';
 
 .sidebar {
-  width: rem(230px);
+  width: rem(255px);
   height: calc(100vh - 90px);
   background-color: $sidebarBackground;
-  padding-left: rem(22px);
   padding-top: rem(24.5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__logo {
-    width: 63%;
+    padding-left: rem(22px);
+    width: rem(130px);
   }
 
   &__menu {
     display: flex;
     flex-direction: column;
-    margin-top: 27px;
+    margin-top: rem(27px);
+    padding-left: rem(8px);
 
     &__item {
       color: $secondaryColor;
       font-size: rem(12.5px);
-      margin-bottom: rem(22px);
+      margin-bottom: rem(5px);
+      padding: rem(10px) rem(16px) rem(10px) rem(16px);
+
+      &--active {
+        color: white;
+        font-size: rem(12.5px);
+        margin-bottom: rem(5px);
+        background-color: $musicItemHover;
+        padding: rem(10px) rem(16px) rem(10px) rem(16px);
+        margin-right: rem(10px);
+        border-radius: rem(3px);
+
+        .icon {
+          width: 20px;
+          height: 20px;
+          fill: white;
+          margin-right: rem(17px);
+          vertical-align: middle;
+        }
+      }
 
       .icon {
         width: 20px;
@@ -29,6 +53,102 @@
         fill: $secondaryColor;
         margin-right: rem(17px);
         vertical-align: middle;
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+
+    .language {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: rem(10px);
+      padding-left: rem(25px);
+      padding-right: rem(25px);
+
+      &__item {
+        width: 49%;
+        height: rem(23px);
+        @include Gotham;
+        border-radius: rem(3px);
+        border: none;
+        outline: none;
+        font-size: rem(12px);
+        color: $secondaryColor;
+        background-color: transparent;
+
+        &--active {
+          width: 49%;
+          height: rem(23px);
+          @include Gotham;
+          border-radius: rem(3px);
+          border: none;
+          outline: none;
+          font-size: rem(12px);
+          color: white;
+          background-color: $musicItemHover;
+        }
+      }
+    }
+
+    .set-token {
+      width: 100%;
+      padding-left: rem(25px);
+      padding-right: rem(25px);
+
+      &__btn {
+        width: 100%;
+        margin-top: rem(10px);
+        margin-bottom: rem(10px);
+        height: rem(25px);
+        @include Gotham;
+        border-radius: rem(3px);
+        border: none;
+        outline: none;
+        font-size: rem(12px);
+        color: white;
+        background-color: $musicItemHover;
+      }
+    }
+
+    .token-fields {
+      width: 100%;
+      padding-left: rem(25px);
+      padding-right: rem(25px);
+
+      input {
+        width: 100%;
+        margin-top: rem(8px);
+        margin-bottom: rem(5px);
+        height: rem(25px);
+        @include Gotham;
+        border-radius: rem(3px);
+        border: none;
+        outline: none;
+        font-size: rem(12px);
+        color: $sidebarBackground;
+        padding-left: rem(7px);
+        background-color: white;
+      }
+
+      button {
+        width: 100%;
+        margin-top: rem(2px);
+        margin-bottom: rem(10px);
+        height: rem(25px);
+        @include Gotham;
+        border-radius: rem(3px);
+        border: none;
+        outline: none;
+        font-size: rem(12px);
+        color: white;
+        background-color: $musicItemHover;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }

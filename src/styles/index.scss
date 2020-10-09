@@ -1,20 +1,10 @@
-@import './normalize', './helpers', './media-queries', './palette', './typography';
-
-// @include mq-show-breakpoints;
+@import './normalize', './helpers', './palette', './typography';
 
 html,
 body {
   display: block;
   font-size: rem(14px);
   @include Gotham;
-
-  @include mq($until: desktop) {
-    font-size: rem(12.5px);
-  }
-
-  @include mq($until: small-desktop) {
-    font-size: rem(10px);
-  }
 
   overflow: hidden;
 }
@@ -65,12 +55,6 @@ hr.hr {
   display: none;
 }
 
-.hideOnSmallTablet {
-  @include mq($until: small-tablet) {
-    display: none;
-  }
-}
-
 .pt {
   &-0 {
     padding-top: 0;
@@ -117,4 +101,9 @@ hr.hr {
 
 .shadow {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+a {
+  color: $secondaryColor;
+  text-decoration: none;
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route as RoutePath } from 'react-router-dom';
 
 interface Route {
-  name: string;
   path: string;
   component: React.FC;
   exact?: boolean;
@@ -18,7 +17,7 @@ const CreateRouter = ({ routes }: Routes): React.ReactElement => {
       <Switch>
         {routes &&
           routes.map((route) => (
-            <RoutePath key={route.name} path={route.path} component={route.component} exact={route.exact} />
+            <RoutePath key={route.path} path={route.path} component={route.component} exact={route.exact} />
           ))}
       </Switch>
     </Router>

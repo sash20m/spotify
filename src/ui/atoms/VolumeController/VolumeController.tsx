@@ -1,13 +1,20 @@
 import React, { ReactElement, useState } from 'react';
 import { Range, getTrackBackground } from 'react-range';
+import { playerFunctionality } from 'libs/playerFunctionality';
+
 import './VolumeController.scss';
 
 const STEP = 0.1;
 const MIN = 0;
 const MAX = 100;
 
-export const VolumeController = (): ReactElement => {
-  const [value, setValue] = useState<number[]>([0]);
+export const VolumeController: React.FC = (): ReactElement => {
+  const [value, setValue] = useState<number[]>([100]);
+
+  const onChange = (values: number[]): void => {
+    setValue(values);
+    playerFunctionality().setVolume(Math.round(values[0]));
+  };
 
   return (
     <div className="volume-controller">
@@ -16,7 +23,7 @@ export const VolumeController = (): ReactElement => {
         step={STEP}
         min={MIN}
         max={MAX}
-        onChange={(values) => setValue(values)}
+        onChange={(values) => onChange(values)}
         renderTrack={({ props, children }) => (
           <div
             onMouseDown={props.onMouseDown}

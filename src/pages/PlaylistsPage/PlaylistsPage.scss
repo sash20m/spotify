@@ -1,0 +1,77 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+
+@import 'styles/typography';
+
+.playlists {
+  width: 100%;
+  height: calc(100vh - 90px);
+  background-color: $playlistBackground;
+  padding: rem(30px);
+  overflow-y: auto;
+
+  .title {
+    @include Gotham;
+    font-size: rem(20px);
+    color: white;
+    margin-bottom: rem(15px);
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .playlist {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $itemBackground;
+      padding: rem(10px);
+      width: rem(170px);
+      height: rem(230px);
+      border-radius: rem(4px);
+      margin-right: rem(15px);
+      margin-bottom: rem(40px);
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+
+        &__cover {
+          margin-top: rem(10px);
+          width: rem(130px);
+          height: rem(130px);
+          border-radius: rem(2px);
+        }
+
+        &__name {
+          margin-top: rem(10px);
+          width: rem(130px);
+          font-size: rem(16px);
+          @include Gotham;
+          color: white;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        &__description {
+          width: rem(130px);
+          font-size: rem(12px);
+          @include Raleway;
+          color: $secondaryColor;
+          margin-top: rem(5px);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

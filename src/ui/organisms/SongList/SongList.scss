@@ -1,0 +1,45 @@
+@import 'styles/palette';
+@import 'styles/helpers';
+
+@import 'styles/typography';
+
+.list {
+  z-index: 3;
+  min-height: 20vh;
+  margin-bottom: rem(30px);
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    padding: rem(10px);
+    @include Raleway;
+    text-transform: uppercase;
+    color: $secondaryColor;
+    font-size: rem(12.5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: rem(20px);
+    min-width: rem(640px);
+
+    &__diez {
+      margin-right: rem(17px);
+      margin-left: rem(17px);
+    }
+
+    &__title {
+      width: 50%;
+
+      @media only screen and (max-width: 1000px) {
+        width: 37%;
+      }
+    }
+
+    &__album {
+      width: 30%;
+    }
+
+    &__time {
+      width: auto;
+      margin-left: 70px;
+    }
+  }
+}

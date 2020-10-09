@@ -1,6 +1,6 @@
 @import 'styles/palette';
 @import 'styles/helpers';
-@import 'styles/media-queries';
+
 @import 'styles/typography';
 
 .header {
@@ -9,6 +9,7 @@
   background: linear-gradient(#6cbfab, #366056);
   display: flex;
   flex-direction: row;
+  min-width: rem(640px);
 
   &__cover-content {
     height: 100%;
@@ -19,10 +20,18 @@
     align-items: center;
 
     .cover {
-      width: 230px;
-      height: 230px;
+      width: rem(220px);
+      height: rem(220px);
       box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
       margin-bottom: rem(27px);
+
+      &--loading {
+        width: rem(220px);
+        height: rem(220px);
+        box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+        margin-bottom: rem(27px);
+        background-color: $secondaryColor;
+      }
     }
   }
 
@@ -62,4 +71,9 @@
       margin-bottom: rem(27px);
     }
   }
+}
+
+.loader {
+  margin-left: rem(20px);
+  margin-bottom: rem(120px);
 }
