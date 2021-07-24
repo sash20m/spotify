@@ -4,6 +4,8 @@
 
 ## Getting started
 
+This is a clone made of Spotify. It looks the same. You only need to add to it your spotify account.
+
 ## i. setup ENV
 
 ```
